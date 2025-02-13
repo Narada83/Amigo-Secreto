@@ -9,8 +9,21 @@ function adicionarAmigo() {
     let campoAmigo = document.getElementById('amigo'); // html.
     let amigo = campoAmigo.value;
     nomes.push(amigo);// Add na lista.
-    console.log(nomes);   
-
-campoAmigo.value = ''; // limpa campo.
-campoAmigo.focus(); // retorna o cursor.
+    campoAmigo.value = ''; // limpa campo.
+    campoAmigo.focus(); // retorna o cursor.
 }
+
+//3. Função para atualizar lista.
+function updateLista() {
+    let listaAmigos = document.getElementById("listaAmigos");
+    listaAmigos.innerHTML = "";
+      
+    for (let numerico = 0; numerico < nomes.length; numerico++) {
+        let li = document.createElement("li");
+        li.textContent = nomes[numerico];
+        listaAmigos.appendChild(li);
+        }
+        console.log(nomes);    
+}
+updateLista();
+
